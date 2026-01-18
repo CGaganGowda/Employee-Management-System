@@ -11,6 +11,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@OpenAPIDefinition(
+		info = @Info(
+				title = "Employee Management System REST API",
+				description = "EMS Rest Services",
+				version = "v1.0",
+				contact = @Contact(
+						name = "Gagan",
+						email = "gagancgowda971@gmail.com"
+				),
+				license = @License(
+						name = "Apache 1.0"
+				)
+		),
+		externalDocs = @ExternalDocumentation(
+				description = "EMS Documentation",
+				url = "#"
+		)
+)
 public class EmployeeApplication {
 
 	@Bean
