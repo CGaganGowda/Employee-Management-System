@@ -11,6 +11,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(
+       description = "EMPLOYEE-DETAIL"
+)
 public class EmployeeDto {
     //--------------------VALIDATIONS-----------------------------
     //Validation Bean Annotations
