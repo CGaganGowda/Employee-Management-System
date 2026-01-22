@@ -33,20 +33,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public EmployeeDto createEmployee(EmployeeDto employeeDto) {
 
-        Optional<Employee> optionalEmployee = employeeRepo.findByEmail(employeeDto.getEmail());
+        Employee emp = modelMapper.map(employeeDto, Employee.class);
+        Optional<Employee> optionalEmployee = employeeRepo.findByEmail(emp.getEmail());
         //System.out.println(optionalEmployee);
         if(optionalEmployee.isPresent()){
             throw new EmailAlreadyExistsException("Email Already Exists");
         }
-
-//        if(optionalEmployee.isPresent()){
-//            throw new NameAlreadyExistsException("Name Already Exists");
-//        }
-
-       // Employee emp = mapperClass.maptoEmployee(employeeDto);
-        Employee emp = modelMapper.map(employeeDto, Employee.class);
         Employee savedEmployee = employeeRepo.save(emp);
-        // EmployeeDto savedEmployeeDto = mapperClass.maptoEmployeeDto(savedEmployee);
         return modelMapper.map(savedEmployee, EmployeeDto.class);
     }
 
@@ -54,12 +47,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<EmployeeDto> getAllEmployees() {
         List<Employee> employeeList = employeeRepo.findAll();
-        //List<EmployeeDto> employeeDtoList = mapperClass.maptoListEmployeeDto(employeeList);
-//        List<EmployeeDto> employeeDtoList = employeeList.stream()
-//                .map((emp) -> modelMapper.map(emp, EmployeeDto.class))
-//                .collect(Collectors.toList());
-//        return employeeDtoList;
-
         return employeeList.stream()
                 .map((emp) -> modelMapper.map(emp, EmployeeDto.class))
                 .collect(Collectors.toList());
@@ -70,13 +57,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee emp = employeeRepo.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Employee","id",id)
         );
-        //EmployeeDto empDto = mapperClass.maptoEmployeeDto(emp);
         return modelMapper.map(emp,EmployeeDto.class);
     }
 
     @Override
     public EmployeeDto updateEmployee(EmployeeDto employee) {
-        //Employee emp = mapperClass.maptoEmployee(employee);
         Employee emp = modelMapper.map(employee, Employee.class);
 
         employeeRepo.findById(emp.getId()).orElseThrow(
@@ -88,7 +73,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         emp.setName(employee.getName());
         emp.setSalary(employee.getSalary());
         Employee savedEmployee = employeeRepo.save(emp);
-        //EmployeeDto savedEmployeeDto = mapperClass.maptoEmployeeDto(savedEmployee);
         return modelMapper.map(savedEmployee, EmployeeDto.class);
     }
 
