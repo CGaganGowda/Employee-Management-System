@@ -19,7 +19,7 @@ import java.util.List;
         description = "CRUD API FOR EMS"
 )
 @RestController
-@RequestMapping("api/employee")
+@RequestMapping("api/employees")
 public class EmployeeController {
 
     @Autowired
@@ -48,7 +48,7 @@ public class EmployeeController {
             responseCode = "200",
             description = "EMPLOYEE FOUND"
     )
-    @GetMapping("get")
+    @GetMapping
     public ResponseEntity<List<EmployeeDto>> getAllEmployees(){
         List<EmployeeDto> employeeList = employeeService.getAllEmployees();
         return new ResponseEntity<>(employeeList, HttpStatus.OK);
