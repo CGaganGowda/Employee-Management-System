@@ -34,6 +34,10 @@ public class EmployeeDto {
     @NotEmpty(message = "User email should not be null or Empty")
     private String email;
 
+//    public record EmployeeDto(Long id, String name,Long salary,String dept, String email){
+//
+//    }
+
 
 //    public EmployeeDto(Employee employee) {
 //        this.id = employee.getId();
