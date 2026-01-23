@@ -24,11 +24,11 @@ public class MapperClass {
 
     public static Employee maptoEmployee(EmployeeDto employeeDto){
         Employee employee = new Employee(
-                employeeDto.getId(),
-                employeeDto.getName(),
-                employeeDto.getSalary(),
-                employeeDto.getDept(),
-                employeeDto.getEmail()
+                employeeDto.id(),
+                employeeDto.name(),
+                employeeDto.salary(),
+                employeeDto.dept(),
+                employeeDto.email()
         );
         return employee;
     }
