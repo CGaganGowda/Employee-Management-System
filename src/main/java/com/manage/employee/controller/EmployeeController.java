@@ -22,6 +22,7 @@ import java.util.List;
 @RequestMapping("api/employees")
 public class EmployeeController {
 
+    //Field Dependency Injection - Constructor injection is preferred
     @Autowired
     private EmployeeService employeeService;
 
