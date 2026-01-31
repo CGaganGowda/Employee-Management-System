@@ -104,15 +104,19 @@ public class EmployeeController {
         return new ResponseEntity<>("All employees have been deleted", HttpStatus.OK);
     }
 
-//    @ExceptionHandler(ResourceNotFoundException.class)
-//    public ResponseEntity<ErrorDetails> handleResourceNotFoundException(ResourceNotFoundException exception, WebRequest webRequest){
-//        ErrorDetails errorDetails = new ErrorDetails(
-//                LocalDateTime.now(),
-//                exception.getMessage(),
-//                webRequest.getDescription(true),
-//                "USER_NOT_FOUND"
-//        );
-//        return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
-//    }
+/*
+Controller specific Exceotion Handler
+   @ExceptionHandler(ResourceNotFoundException.class)
+   public ResponseEntity<ErrorDetails> handleResourceNotFoundException(ResourceNotFoundException exception, WebRequest webRequest){
+       ErrorDetails errorDetails = new ErrorDetails(
+               LocalDateTime.now(),
+               exception.getMessage(),
+               webRequest.getDescription(true),
+               "USER_NOT_FOUND"
+       );
+       return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+   }
+
+*/
 
 }
