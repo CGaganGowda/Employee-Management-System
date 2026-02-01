@@ -106,11 +106,12 @@ public class EmployeeController {
             summary = "DELETE API",
             description = "DELETE ALL EMPLOYEES"
     )
-    @DeleteMapping("deleteAll")
-    public ResponseEntity<String> deleteAllEmployees(){
-        employeeService.deleteAllEmployees();
-        return new ResponseEntity<>("All employees have been deleted", HttpStatus.OK);
-    }
+//DELETE ALL THE EMPLOYEES - TYPICALLY NOT USED
+    // @DeleteMapping("deleteAll")
+    // public ResponseEntity<String> deleteAllEmployees(){
+    //     employeeService.deleteAllEmployees();
+    //     return new ResponseEntity<>("All employees have been deleted", HttpStatus.OK);
+    // }
 
 /*
 Controller specific Exceotion Handler
