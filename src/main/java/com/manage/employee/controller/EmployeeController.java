@@ -81,6 +81,8 @@ public class EmployeeController {
             responseCode = "200",
             description = "EMPLOYEE UPDATED"
     )
+
+//UPDATE THE EMPLOYEE(in the below method, all the details are updated.To update specific details, we can use HashMap.)
     @PutMapping("update/{id}")
     public ResponseEntity<EmployeeDto> updateEmployee(@RequestBody @Valid EmployeeDto employee,@PathVariable Long id){
         employee.setId(id);
@@ -92,6 +94,8 @@ public class EmployeeController {
             summary = "DELETE API",
             description = "DELETE A EMPLOYEE"
     )
+
+//DELETE A EMPLOYEE
     @DeleteMapping("delete/{id}")
     public ResponseEntity<String> deleteEmployee(@PathVariable Long id){
         employeeService.deleteEmployee(id);
