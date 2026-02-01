@@ -34,6 +34,8 @@ public class EmployeeController {
             responseCode = "201",
             description = "EMPLOYEE CREATED"
     )
+
+//Create Employee - POST METHOD
     @PostMapping("create")
     public ResponseEntity<EmployeeDto> createEmployee(@RequestBody @Valid EmployeeDto employee){
         //System.out.println("createEmployee "+employee);
@@ -49,6 +51,7 @@ public class EmployeeController {
             responseCode = "200",
             description = "EMPLOYEE FOUND"
     )
+//GET ALL THE EMPLOYEES
     @GetMapping
     public ResponseEntity<List<EmployeeDto>> getAllEmployees(){
         List<EmployeeDto> employeeList = employeeService.getAllEmployees();
@@ -63,6 +66,7 @@ public class EmployeeController {
             responseCode = "200",
             description = "EMPLOYEES FOUND"
     )
+//GET THE REQUESTED EMPLOYEE WITH ID
     @GetMapping("get/{id}")
     public ResponseEntity<EmployeeDto> getEmployee(@PathVariable Long id){
         EmployeeDto employee = employeeService.getEmployee(id);
