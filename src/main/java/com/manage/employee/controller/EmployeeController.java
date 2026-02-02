@@ -40,6 +40,9 @@ public class EmployeeController {
     public ResponseEntity<EmployeeDto> createEmployee(@RequestBody @Valid EmployeeDto employee){
         //System.out.println("createEmployee "+employee);
         EmployeeDto createdEmployee = employeeService.createEmployee(employee);
+            if(createdEmployee == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<>(createdEmployee, HttpStatus.CREATED);
     }
 
@@ -70,6 +73,9 @@ public class EmployeeController {
     @GetMapping("get/{id}")
     public ResponseEntity<EmployeeDto> getEmployee(@PathVariable Long id){
         EmployeeDto employee = employeeService.getEmployee(id);
+            if(employee == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
