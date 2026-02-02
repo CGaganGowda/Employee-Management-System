@@ -58,6 +58,9 @@ public class EmployeeController {
     @GetMapping
     public ResponseEntity<List<EmployeeDto>> getAllEmployees(){
         List<EmployeeDto> employeeList = employeeService.getAllEmployees();
+        if (employeeList.isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
         return new ResponseEntity<>(employeeList, HttpStatus.OK);
     }
 
