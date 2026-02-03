@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
+//Can be replaced with a external dependency - ModelMapper
+
 @Component
 public class MapperClass {
 
