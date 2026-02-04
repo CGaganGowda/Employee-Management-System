@@ -83,10 +83,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         );
         employeeRepo.deleteById(id);
     }
-
-    @Override
-    public void deleteAllEmployees() {
-        employeeRepo.deleteAll();
-    }
+//Not supported for larger databases.
+    // @Override
+    // public void deleteAllEmployees() {
+    //     employeeRepo.deleteAll();
+    // }
 
 }
