@@ -98,8 +98,8 @@
 		</dependency>
 
 	</dependencies>
-
-	<build>
+#The Lombhok plugin/ dependency has to be excluded as it can cause Stack-over flow due to Entity mapping
+ 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
