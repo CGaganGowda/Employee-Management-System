@@ -29,6 +29,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private ModelMapper modelMapper;
 
+    // public EmployeeServiceImpl(EmployeeRepo employeeRepo, ModelMapper modelMapper){
+    //     this.employeeRepo = employeeRepo;
+    //     this.modelMapper = modelMapper;
+    // }
+
 
     @Override
     public EmployeeDto createEmployee(EmployeeDto employeeDto) {
