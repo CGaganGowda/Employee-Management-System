@@ -37,11 +37,11 @@ public class MapperClass {
     }
 
 
-//    public static List<EmployeeDto> maptoListEmployeeDto(List<Employee> employeeList){
-//        List<EmployeeDto> employeeDtoList = employeeList.stream()
-//                .map(EmployeeDto::new)
-//                .collect(Collectors.toList());
-//        return employeeDtoList;
-//    }
+   public static List<EmployeeDto> maptoListEmployeeDto(List<Employee> employeeList){
+       List<EmployeeDto> employeeDtoList = employeeList.stream()
+               .map(EmployeeDto::new)
+               .toList();
+       return employeeDtoList;
+   }
 
 }
