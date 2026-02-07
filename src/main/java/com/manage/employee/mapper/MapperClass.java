@@ -36,22 +36,6 @@ public class MapperClass {
         return employee;
     }
 
-//    public static List<EmployeeDto> maptoListEmployeeDto(List<Employee> employeeList){
-//        List<EmployeeDto> employeeDto = employeeList.stream()
-//                .map(
-//                        employee -> {
-//                            EmployeeDto dto = new EmployeeDto();
-//                            dto.setId(employee.getId());
-//                            dto.setName(employee.getName());
-//                            dto.setSalary(employee.getSalary());
-//                            dto.setDept(employee.getDept());
-//                            dto.setEmail(employee.getEmail());
-//                            return dto;
-//                        }
-//                )
-//                .collect(Collectors.toList());
-//        return employeeDto;
-//    }
 
 //    public static List<EmployeeDto> maptoListEmployeeDto(List<Employee> employeeList){
 //        List<EmployeeDto> employeeDtoList = employeeList.stream()
