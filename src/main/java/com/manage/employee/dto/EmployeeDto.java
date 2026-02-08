@@ -12,7 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Schema(
-       description = "EMPLOYEE-DETAIL"
+       description = "Employee Dto Class - a middleware POJO class for data exchange between the layers and the server."
 )
 public class EmployeeDto {
     //--------------------VALIDATIONS-----------------------------
