@@ -46,6 +46,11 @@ public class SpringSecurityConfig {
                 .roles("student")
                 .build();
 
-        return new InMemoryUserDetailsManager(admin,student);
+        UserDetails employee = User.builder()
+                .username("employee")
+                .password(passwordEncoder().encode("12345"))
+                .roles("employee")
+                .build();
+        return new InMemoryUserDetailsManager(admin,student,employee);
     }
 }
