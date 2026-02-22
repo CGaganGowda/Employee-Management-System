@@ -31,26 +31,4 @@ public class SpringSecurityConfig {
                 }).httpBasic(Customizer.withDefaults());
         return http.build();
     }
-
-        @Bean
-    public UserDetailsService  userDetailsService() {
-        UserDetails admin = User.builder()
-                .username("admin")
-                .password(passwordEncoder().encode("admin"))
-                .roles("admin")
-                .build();
-
-        UserDetails student = User.builder()
-                .username("student")
-                .password(passwordEncoder().encode("password"))
-                .roles("student")
-                .build();
-
-        UserDetails employee = User.builder()
-                .username("employee")
-                .password(passwordEncoder().encode("12345"))
-                .roles("employee")
-                .build();
-        return new InMemoryUserDetailsManager(admin,student,employee);
-    }
 }
