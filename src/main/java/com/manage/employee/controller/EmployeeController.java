@@ -61,6 +61,7 @@ public class EmployeeController {
             description = "EMPLOYEE FOUND"
     )
 //GET ALL THE EMPLOYEES
+    @PreAuthorize("hasAnyRole('admin','manager','employee')")
     @GetMapping
     public ResponseEntity<List<EmployeeDto>> getAllEmployees(){
         List<EmployeeDto> employeeList = employeeService.getAllEmployees();
@@ -79,6 +80,7 @@ public class EmployeeController {
             description = "EMPLOYEES FOUND"
     )
 //GET THE REQUESTED EMPLOYEE WITH ID
+    @PreAuthorize("hasAnyRole('admin','manager','employee')")
     @GetMapping("get/{id}")
     public ResponseEntity<EmployeeDto> getEmployee(@PathVariable Long id){
         EmployeeDto employee = employeeService.getEmployee(id);
