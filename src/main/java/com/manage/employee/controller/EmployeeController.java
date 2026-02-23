@@ -41,6 +41,7 @@ public class EmployeeController {
     )
 
 //Create Employee - POST METHOD
+    @PreAuthorize("hasAnyRole('admin','manager')")
     @PostMapping("create")
     public ResponseEntity<EmployeeDto> createEmployee(@RequestBody @Valid EmployeeDto employee){
         //System.out.println("createEmployee "+employee);
@@ -97,6 +98,7 @@ public class EmployeeController {
     )
 
 //UPDATE THE EMPLOYEE(in the below method, all the details are updated.To update specific details, we can use HashMap.)
+    @PreAuthorize("hasAnyRole('admin','manager')")
     @PutMapping("update/{id}")
     public ResponseEntity<EmployeeDto> updateEmployee(@RequestBody @Valid EmployeeDto employee,@PathVariable Long id){
         employee.setId(id);
@@ -110,6 +112,7 @@ public class EmployeeController {
     )
 
 //DELETE A EMPLOYEE
+    @PreAuthorize("hasAnyRole('admin','manager')")
     @DeleteMapping("delete/{id}")
     public ResponseEntity<String> deleteEmployee(@PathVariable Long id){
         employeeService.deleteEmployee(id);
