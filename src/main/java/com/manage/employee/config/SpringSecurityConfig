@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+@EnableMethodSecurity
 @Configuration
 public class SpringSecurityConfig {
 
@@ -27,6 +28,7 @@ public class SpringSecurityConfig {
 //                    authorize.requestMatchers(HttpMethod.DELETE,"/api/**").hasRole("admin");
 //                    authorize.requestMatchers(HttpMethod.PATCH,"/api/**").hasAnyRole("admin","student");
 //                    authorize.requestMatchers(HttpMethod.GET,"/api/**").permitAll();
+                      authorize.requestMatchers("/api/auth/**").permitsAll();
                     authorize.anyRequest().authenticated();
                 }).httpBasic(Customizer.withDefaults());
         return http.build();
