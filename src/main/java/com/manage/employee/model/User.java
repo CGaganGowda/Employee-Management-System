@@ -1,3 +1,4 @@
+package com.manage.employee.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
