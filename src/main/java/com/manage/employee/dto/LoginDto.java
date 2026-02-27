@@ -1,4 +1,5 @@
-package com.Management.todo.dto;
+package com.manage.employee.dto;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,3 +14,4 @@ public class LoginDto {
     private String usernameOrEmail;
     private String password;
 }
+
