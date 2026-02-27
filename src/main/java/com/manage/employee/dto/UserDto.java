@@ -1,7 +1,6 @@
-package com.Management.todo.dto;
+package com.manage.employee.dto;
 
-
-import com.Management.todo.model.Role;
+import com.manage.employee.model.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,3 +18,4 @@ public class UserDto {
     private String password;
     private String email;
 }
+
