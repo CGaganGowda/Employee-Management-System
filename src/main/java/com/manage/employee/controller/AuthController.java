@@ -1,4 +1,4 @@
-package com.Management.todo.controller;
+package com.manage.employee.controller;
 
 import com.Management.todo.dto.LoginDto;
 import com.Management.todo.dto.UserDto;
@@ -31,3 +31,4 @@ public class AuthController {
        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
+
