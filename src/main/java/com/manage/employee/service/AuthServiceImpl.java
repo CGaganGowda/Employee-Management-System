@@ -1,12 +1,12 @@
-package com.Management.todo.service;
+package com.manage.employee.service;
 
-import com.Management.todo.dto.LoginDto;
-import com.Management.todo.dto.UserDto;
-import com.Management.todo.exception.TodoApiException;
-import com.Management.todo.model.Role;
-import com.Management.todo.model.User;
-import com.Management.todo.repo.RoleRepo;
-import com.Management.todo.repo.UserRepo;
+import com.manage.employee.dto.LoginDto;
+import com.manage.employeedto.UserDto;
+import com.manage.employee.exception.TodoApiException;
+import com.manage.employee.model.Role;
+import com.manage.employee.model.User;
+import com.manage.employee.repo.RoleRepo;
+import com.manage.employee.repo.UserRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -64,3 +64,4 @@ public class AuthServiceImpl implements AuthService {
         return "Login successful";
     }
 }
+
