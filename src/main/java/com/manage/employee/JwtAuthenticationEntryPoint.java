@@ -1,4 +1,4 @@
-package com.Management.todo.security;
+package com.manage.employee;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,3 +18,4 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED,authException.getMessage());
     }
 }
+
