@@ -19,6 +19,7 @@ import java.util.List;
         description = "CRUD API FOR EMS"
 )
 @RestController
+@AllArgsConstructor
 @RequestMapping("api/employees")
 public class EmployeeController {
 
