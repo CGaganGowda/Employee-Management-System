@@ -27,7 +27,6 @@ public class AuthServiceImpl implements AuthService {
     private UserRepo userRepo;
     private RoleRepo roleRepo;
     private PasswordEncoder encoder;
-    @Autowired
     private AuthenticationManager authenticationManager;
 
     @Override
@@ -64,4 +63,5 @@ public class AuthServiceImpl implements AuthService {
         return "Login successful";
     }
 }
+
 
