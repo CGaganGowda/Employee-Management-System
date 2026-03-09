@@ -8,7 +8,6 @@ import com.manage.employee.model.Employee;
 import com.manage.employee.repo.EmployeeRepo;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,6 @@ import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
-@Setter
 @NoArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
 
