@@ -35,4 +35,10 @@ public class SpringSecurityConfig {
                 }).httpBasic(Customizer.withDefaults());
         return http.build();
     }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration){
+        return configuration.getAuthenticationManager();
+    }
+
 }
