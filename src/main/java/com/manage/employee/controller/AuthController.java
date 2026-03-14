@@ -1,9 +1,9 @@
 package com.manage.employee.controller;
 
-import com.Management.todo.dto.LoginDto;
-import com.Management.todo.dto.UserDto;
-import com.Management.todo.model.User;
-import com.Management.todo.service.AuthService;
+import com.manage.employee.dto.LoginDto;
+import com.manage.employee.dto.UserDto;
+import com.manage.employee.model.User;
+import com.manage.employee.service.AuthService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
