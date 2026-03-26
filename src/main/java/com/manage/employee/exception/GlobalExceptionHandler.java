@@ -67,6 +67,17 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @ExceptionHandler(value = APIException.class)
+    public ResponseEntity<ErrorDetails> handleTodoApiException(APIException exception, WebRequest request){
+        ErrorDetails errorDetails = new ErrorDetails(
+                exception.getMessage(),
+                "API_EXCEPTION",
+                request.getDescription(false),
+                LocalDateTime.now()
+        );
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+    }
+
 //-------------------------------Customizing error response for Validations-----------------------------
     @Override
     protected @Nullable ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
