@@ -33,6 +33,16 @@ public class SpringSecurityConfig {
                       authorize.requestMatchers("/api/auth/**").permitsAll();
                     authorize.anyRequest().authenticated();
                 }).httpBasic(Customizer.withDefaults());
+
+        //Un-Authorized users gets exception message from here
+        http.exceptionHandling(
+                exception -> exception
+                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
+        );
+        
+        //Authentication-Filter class to execute before spring security filters(UsernamePasswordAuthenticationFilter)
+        http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+        
         return http.build();
     }
 
