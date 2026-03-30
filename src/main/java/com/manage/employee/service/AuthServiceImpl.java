@@ -56,12 +56,14 @@ public class AuthServiceImpl implements AuthService {
         return savedUser;
     }
 
-    @Override
-    public String login(LoginDto loginDto) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDto.getUsernameOrEmail(),loginDto.getPassword()));
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        return "Login successful";
-    }
+    // @Override
+    // public String login(LoginDto loginDto) {
+    //     Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDto.getUsernameOrEmail(),loginDto.getPassword()));
+    //     SecurityContextHolder.getContext().setAuthentication(authentication);
+    //     return "Login successful";
+    // }
+
+    
 }
 
 
