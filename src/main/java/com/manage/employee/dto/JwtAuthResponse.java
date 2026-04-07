@@ -1,4 +1,4 @@
-package com.Management.todo.dto;
+package com.manage.employee.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
