@@ -18,7 +18,7 @@ public class Employee {
     private String name;
     @Column(nullable = false)
     private Long salary;
-    @Column(nullable = false)
+    @Column(nullable = false,unique=true)
     private String dept;
     @Column(nullable = false, unique = true)
     private String email;
