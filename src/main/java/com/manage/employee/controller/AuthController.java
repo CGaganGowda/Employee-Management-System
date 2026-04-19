@@ -29,7 +29,7 @@ public class AuthController {
     public ResponseEntity<JwtAuthResponse> loginUser(@RequestBody LoginDto  loginDto){
        JwtAuthResponse respone = new JwtAuthResponse();
         String token = authService.login(loginDto);
-        response.setToken(token);
+        response.setToken(accessToken);
        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
