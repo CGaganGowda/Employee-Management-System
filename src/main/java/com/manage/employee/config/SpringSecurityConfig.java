@@ -29,12 +29,14 @@ public class SpringSecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf((csrf)->csrf.disable())
                 .authorizeHttpRequests( (authorize) -> {
-//                    authorize.requestMatchers(HttpMethod.POST,"/api/**").hasRole("admin");
-//                    authorize.requestMatchers(HttpMethod.PUT,"/api/**").hasRole("admin");
-//                    authorize.requestMatchers(HttpMethod.DELETE,"/api/**").hasRole("admin");
-//                    authorize.requestMatchers(HttpMethod.PATCH,"/api/**").hasAnyRole("admin","student");
-//                    authorize.requestMatchers(HttpMethod.GET,"/api/**").permitAll();
-                      authorize.requestMatchers("/api/auth/**").permitsAll();
+                    /*
+                   authorize.requestMatchers(HttpMethod.POST,"/api/**").hasRole("admin");
+                   authorize.requestMatchers(HttpMethod.PUT,"/api/**").hasRole("admin");
+                   authorize.requestMatchers(HttpMethod.DELETE,"/api/**").hasRole("admin");
+                   authorize.requestMatchers(HttpMethod.PATCH,"/api/**").hasAnyRole("admin","student");
+                   authorize.requestMatchers(HttpMethod.GET,"/api/**").permitAll();
+                     */
+                    authorize.requestMatchers("/api/auth/**").permitsAll();
                     authorize.anyRequest().authenticated();
                 }).httpBasic(Customizer.withDefaults());
 
