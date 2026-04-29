@@ -1,7 +1,7 @@
-package com.Management.todo.security;
+package com.manage.employee.security;
 
-import com.Management.todo.model.User;
-import com.Management.todo.repo.UserRepo;
+import com.Management.employee.model.User;
+import com.Management.employee.repo.UserRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
