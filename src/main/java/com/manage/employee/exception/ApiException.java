@@ -1,4 +1,4 @@
-package com.Management.todo.exception;
+package com.manage.employee.exception;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
