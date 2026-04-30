@@ -28,6 +28,7 @@ public class AuthServiceImpl implements AuthService {
     private RoleRepo roleRepo;
     private PasswordEncoder encoder;
     private AuthenticationManager authenticationManager;
+    private JwtTokenProvider jwtTokenProvider;
 
     @Override
     public User register(UserDto userDto) {
