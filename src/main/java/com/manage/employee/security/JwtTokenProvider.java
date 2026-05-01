@@ -62,7 +62,7 @@ public class JwtTokenProvider {
                 .parse(token);
                 return true;
         }
-        Catch(Exception e){
+        catch(Exception e){
             e.printStackTrace();
         }
         return true;
